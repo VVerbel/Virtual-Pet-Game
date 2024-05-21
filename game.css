@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.body {
+    background-color: white;
+    color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.score {
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+
+.main {
+    height: 600px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 80px;
+
+}
+
+.hole {
+    background-color: rebeccapurple;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hole .hamster {
+
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    animation: rise .3s ease-in-out;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateX(-50%) translateY(-100%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0%);
+    }
+
+}
+
+.cursor {
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-size: cover;
+    background-image: url("https://www.freepnglogos.com/uploads/hammer-png/clipart-hammer-coloured-11.png");
+    transform: translate(-20%, -20%);
+    transition: transform .1s;
+    pointer-events: none ;
+}
+
+.cursor.active {
+    transform: translate(-20%, -20%) rotate(-45deg);
+}
+
+button {
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    background-color: #bd98e0;
+    opacity: 0.8;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 10px;
+}
